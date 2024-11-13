@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.calc-height{
+    height: calc(100vh - 100px);
+}
+
+body{
+
+}
+
+
+
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+ input[type=number] {
+  -moz-appearance: textfield;
+}
+
+tr:nth-child(2n) {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width as needed */
+  background-color: #f2f2f2; /* Scrollbar track color */
+   height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c1c1; /* Scrollbar thumb color */
+  border-radius: 5px; /* Rounded corners */
+}

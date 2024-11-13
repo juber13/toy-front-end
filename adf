@@ -1,0 +1,73 @@
+[1mdiff --git a/src/Components/Header.tsx b/src/Components/Header.tsx[m
+[1mindex c088604..a64311c 100644[m
+[1m--- a/src/Components/Header.tsx[m
+[1m+++ b/src/Components/Header.tsx[m
+[36m@@ -19,7 +19,6 @@[m [mimport { LuSchool } from "react-icons/lu";[m
+ import { MdOutlineEdit } from "react-icons/md";[m
+ import { CiBoxes } from "react-icons/ci";[m
+ import shikshaImg from '../Assests/Images/shiksha.png';[m
+[31m-// import kitabImg from '../Assests/Images/KitabKhilona.png';[m
+ [m
+ const Header = () => {[m
+   const dispatch = useDispatch();[m
+[36m@@ -61,10 +60,9 @@[m [mconst Header = () => {[m
+     <div className='bg-white sticky w-[100%]  top-0 shadow-md p-2 font-[300] text-gray-600 flex gap-1  items-center justify-between'>[m
+       <Link[m
+         to={HOME}[m
+[31m-        className={`font-semibold sm:text-md text-xs text-gray-700 p-1 py-2 border rounded-md  ${handleActive(HOME)}`}[m
+[32m+[m[32m        className={`font-semibold sm:text-md text-xs`}[m
+       >[m
+[31m-         Smapoorana shiksha[m
+[31m-        <img src={shikshaImg} className="size-20" alt="sampoorna-logo" />[m
+[32m+[m[32m        <img src={shikshaImg} className="w-20 bg-cover h-13 object-contain" alt="sampoorna-logo" />[m
+       </Link>[m
+ [m
+ [m
+[1mdiff --git a/src/Pages/Order Details/OrderDetails.tsx b/src/Pages/Order Details/OrderDetails.tsx[m
+[1mindex b6b96d6..58e62fb 100644[m
+[1m--- a/src/Pages/Order Details/OrderDetails.tsx[m	
+[1m+++ b/src/Pages/Order Details/OrderDetails.tsx[m	
+[36m@@ -253,7 +253,7 @@[m [mconst OrderDetails: React.FC = () => {[m
+                       disabled={orderDetails?.isAddedOrRemovedFromTheStock}[m
+                     >[m
+                       {orderDetails?.isAddedOrRemovedFromTheStock[m
+[31m-                        ? "Added"[m
+[32m+[m[32m                        ? "Added To Stock"[m
+                         : "Add To stock"}[m
+                     </button>[m
+                   )}[m
+[36m@@ -377,7 +377,6 @@[m [mconst OrderDetails: React.FC = () => {[m
+           <div className='status-container shadow-lg rounded-md border p-8 bg-blue-50 mt-4'>[m
+             <div className='w-full flex justify-between items-center'>[m
+               <h2 className='text-xl mb-3'>Order Status</h2>[m
+[31m-              {orderDetails?.isAddedOrRemovedFromTheStock == false && ([m
+                 <button[m
+                   className='bg-green-500 text-xs rounded-md p-2 text-white font-medium mb-3'[m
+                   onClick={() =>[m
+[36m@@ -386,7 +385,6 @@[m [mconst OrderDetails: React.FC = () => {[m
+                 >[m
+                   {editMode ? "Save Details" : "Update Details"}[m
+                 </button>[m
+[31m-              )}[m
+             </div>[m
+             <table className='p-4 w-full text-sm bg-white'>[m
+               <thead>[m
+[36m@@ -582,12 +580,12 @@[m [mconst OrderDetails: React.FC = () => {[m
+                     } hover:bg-gray-200 cursor-pointer`}[m
+                   >[m
+                     <td className='border p-1'>{toy.id}</td>[m
+[31m-                    <td className='border p-1'>{toy.name}</td>[m
+[31m-                    <td className='border p-1'>{toy.brand}</td>[m
+[31m-                    <td className='border p-1'>{toy.subBrand}</td>[m
+[31m-                    <td className='border p-1'>{item.price}</td>[m
+[31m-                    <td className='border p-1'>{item.quantity}</td>[m
+[31m-                    <td className='border p-2'>{toy.category}</td>[m
+[32m+[m[32m                    <td className='border p-1'>{toy.name ? toy.name : "Not Provided"}</td>[m
+[32m+[m[32m                    <td className='border p-1'>{toy.brand ? toy.brand : "Not Provided"}</td>[m
+[32m+[m[32m                    <td className='border p-1'>{toy.subBrand ? toy.subBrand : "Not Provided"}</td>[m
+[32m+[m[32m                    <td className='border p-1'>{item.price  ? item.price : "Not Provided"}</td>[m
+[32m+[m[32m                    <td className='border p-1'>{item.quantity ? item.quantity : "Not Provided"}</td>[m
+[32m+[m[32m                    <td className='border p-2'>{toy.category ? toy.category : "Not Provided"}</td>[m
+                     <td className='border p-2'>[m
+                       {toy.level ? toy.level : "Not Provided"}[m
+                     </td>[m

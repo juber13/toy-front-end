@@ -1,0 +1,8 @@
+.ellipsisStyle {
+    
+    white-space: nowrap;       /* Prevents the text from wrapping */
+    overflow: hidden;          /* Hides the overflow text */
+    text-overflow: ellipsis;   /* Adds the ellipsis (...) */
+
+  }
+  
